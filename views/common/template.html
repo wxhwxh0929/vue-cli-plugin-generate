@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <!-- css始 -->
+  <link rel="stylesheet" href="/styles/common/style.css">
+  <link rel="stylesheet" href="/styles/home/index.css">
+  <link rel="stylesheet" href="/styles/bin/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/bin/bootstrap-table.min.css">
+  <link rel="stylesheet" href="/styles/bin/bootstrapValidator.min.css">
+  <!-- js始 -->
+  <script src="/js/bin/jquery.min.js"></script>
+  <script src="/js/bin/bootstrap.min.js"></script>
+  <script src="/js/bin/bootstrap-table.min.js"></script>
+  <script src="/js//bin/bootstrapValidator.min.js"></script>
+  <script src="/js/utils/rem.js"></script>
+  <script src="/js/navbar/index.js"></script>
+</head>
+
+<body>
+  <div class="home-content">
+    <header class="header">
+      {{platFormName}}
+    </header>
+    <nav class="left_navigation">
+      <ul class="navigation_content">
+        
+      </ul>
+    </nav>
+    {% block main %} {% endblock %} -->
+    <footer>
+
+    </footer>
+  </div>
+</body>
+
+</html>

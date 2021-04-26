@@ -1,0 +1,126 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+const app = require('../app');
+const debug = require('debug')('vue-cli-plugin-generate:server');
+const http = require('http');
+/**
+ * 子进程，当启动项目额时候，创建一个异步进程去打开浏览器
+ */
+const cp = require('child_process');
+const os = require('os');
+const chalk = require('chalk');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+const port = normalizePort(process.env.PORT || '3000');
+// app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+const server = http.createServer(app.callback());
+
+/**
+ * 获取当前主机的IPv4地址
+ */
+function getIPv4 () {
+  const interfaces = os.networkInterfaces();
+  const ipv4s = [];
+  Object.keys(interfaces).forEach((key) => {
+    interfaces[key].forEach((item) => {
+      if (item.family !== 'IPv4' || item.internal != false) return;
+      ipv4s.push(item.address);
+    });
+  });
+  return ipv4s[0];
+}
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port, (err) => {
+  if (err) {
+    console.log('');
+    console.log(chalk.red(err));
+    console.log('');
+  } else {
+    console.log('');
+    console.log('');
+    console.log(chalk.cyan(`Express server listening at http://localhost:${port} or at ${getIPv4()}:${port}`));
+    console.log('');
+    console.log('');
+  }
+});
+/**
+ * 自动打开浏览器
+ */
+cp.exec(`start http://localhost:${port}/`);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort (val) {
+  const port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError (error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  const bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening () {
+  const addr = server.address();
+  const bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

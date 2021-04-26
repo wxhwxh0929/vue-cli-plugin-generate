@@ -1,0 +1,8 @@
+[2021-04-02T16:42:08.932] [INFO] access - ::1 - - "GET / HTTP/1.1" 200 185 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+[2021-04-02T16:42:09.542] [INFO] access - ::1 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+[2021-04-02T16:42:33.928] [INFO] access - ::1 - - "GET /string HTTP/1.1" 200 11 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+[2021-04-02T16:42:42.026] [INFO] access - ::1 - - "GET /json HTTP/1.1" 200 26 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+[2021-04-02T16:43:36.054] [INFO] access - ::1 - - "GET / HTTP/1.1" 200 185 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+[2021-04-02T16:43:36.128] [INFO] access - ::1 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+[2021-04-02T16:44:32.190] [INFO] access - ::1 - - "GET /users HTTP/1.1" 200 25 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+[2021-04-02T16:44:42.165] [INFO] access - ::1 - - "GET /users/bar HTTP/1.1" 200 28 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"

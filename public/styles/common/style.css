@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* 怪异盒模型就是IE盒模型 */
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    font-size: 8px !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html,
+  body {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html,
+  body {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  html,
+  body {
+    font-size: 16px !important;
+  }
+}
